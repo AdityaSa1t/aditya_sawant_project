@@ -1,6 +1,7 @@
 package com.cs514.rbatch.utility;
 
 import org.redisson.Redisson;
+import org.redisson.api.RKeys;
 import org.redisson.api.RedissonClient;
 import org.redisson.config.Config;
 
@@ -14,6 +15,11 @@ public class RedisClientUtil {
             redissonClient = Redisson.create(config);
         else
             redissonClient = Redisson.create();
+    }
+
+    public static boolean keyExists(String... key){
+        RKeys redisKeys = redissonClient.getKeys();
+        return redisKeys.countExists(key) > 0;
     }
 
 }
