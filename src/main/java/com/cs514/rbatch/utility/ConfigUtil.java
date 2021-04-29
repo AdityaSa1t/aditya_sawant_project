@@ -19,7 +19,7 @@ public class ConfigUtil {
     public static Config getRedisConfig(){
         try {
             URI redisConfigFileUri = Objects.requireNonNull(ConfigUtil.class.getClassLoader()
-                    .getResource("redis_config.yml")).toURI();
+                    .getResource(Constants.REDIS_CONFIG_FILE_NAME)).toURI();
             return Config.fromYAML(new File(redisConfigFileUri));
         } catch (URISyntaxException | IOException e) {
             LoggerUtil.error("redis_config.yml file does not exist at correct location", e);
