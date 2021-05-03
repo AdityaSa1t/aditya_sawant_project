@@ -1,10 +1,9 @@
-package com.cs514.rbatch.data;
+package com.cs540.rbatch.data;
 
-import com.cs514.rbatch.utility.RedisClientUtil;
+import com.cs540.rbatch.utility.RedisClientUtil;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.util.List;
 
 public class RBatchList {
 
