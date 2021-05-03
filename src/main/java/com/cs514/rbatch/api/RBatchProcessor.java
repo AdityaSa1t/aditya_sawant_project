@@ -2,18 +2,17 @@ package com.cs514.rbatch.api;
 
 import com.cs514.rbatch.data.RBatchList;
 import com.cs514.rbatch.utility.ConfigUtil;
+import com.cs514.rbatch.utility.LoggerUtil;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class RBatchProcessor {
 
     private static Map<String, RBatchList> rBatchLists = new HashMap<>();
     //TODO add custom exceptions everywhere and log instead of throwing them
-    public static void enqueue(String name, Object obj, Object caller) throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+    public static void enqueue(String name, Object obj, Object caller) throws ClassNotFoundException, NoSuchMethodException {
         RBatchList rBatchList = null;
         if(rBatchLists.containsKey(name))
             rBatchList = rBatchLists.get(name);
@@ -25,6 +24,26 @@ public class RBatchProcessor {
                     .build();
             rBatchLists.put(name, rBatchList);
         }
-        rBatchList.add(obj);
+        try {
+            rBatchList.add(obj);
+        } catch (InvocationTargetException e) {
+            LoggerUtil.error("Callback method failed to exeucte. ", e);
+        } catch (IllegalAccessException e) {
+            LoggerUtil.error(e.getMessage());
+        }
+    }
+
+    public static void enqueueAll(String name, Object[] objects, Object caller) throws ClassNotFoundException, NoSuchMethodException {
+        enqueueAll(name, Arrays.asList(objects), caller);
+    }
+
+    public static void enqueueAll(String name, Set<Object> objects, Object caller) throws ClassNotFoundException, NoSuchMethodException {
+        enqueueAll(name, new ArrayList<>(objects), caller);
+    }
+
+    public static void enqueueAll(String name, List<Object> objects, Object caller) throws ClassNotFoundException, NoSuchMethodException {
+        for(Object obj : objects){
+            enqueue(name, obj, caller);
+        }
     }
 }

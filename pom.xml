@@ -49,6 +49,15 @@
             <version>2.7</version>
         </dependency>
 
+        <!-- Testing -->
+        <dependency>
+            <groupId>org.junit</groupId>
+            <artifactId>junit-bom</artifactId>
+            <version>5.7.1</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
+
     </dependencies>
     
 </project>

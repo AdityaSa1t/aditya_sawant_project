@@ -11,4 +11,7 @@ public class LoggerUtil {
         logger.error(message, e);
     }
 
+    public static void error(String message) {
+        logger.error(message);
+    }
 }

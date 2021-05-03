@@ -19,14 +19,13 @@ public class RBatchList {
 
     }
 
-    public boolean add(Object obj) throws InvocationTargetException, IllegalAccessException {
+    public void add(Object obj) throws InvocationTargetException, IllegalAccessException {
         if(obj.getClass() == clazz){
             RedisClientUtil.addToList(this.name, obj);
             if(isBounded && RedisClientUtil.getListSize(name)==size)
                 makeCallback();
-            return true;
         }
-        throw new IllegalArgumentException("List "+name+" does not accepts only objects of type "+clazz.getName());
+        throw new IllegalArgumentException("List "+name+" accepts only objects of type "+clazz.getName());
     }
 
     private void makeCallback() throws InvocationTargetException, IllegalAccessException {
