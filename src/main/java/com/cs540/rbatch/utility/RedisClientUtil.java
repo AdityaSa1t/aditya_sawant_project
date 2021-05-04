@@ -35,8 +35,7 @@ public class RedisClientUtil {
         redissonClient.getList(name).clear();
     }
 
-
-    public static boolean keyExists(String... key){
+    public static boolean keyExists(String key){
         RKeys redisKeys = redissonClient.getKeys();
         return redisKeys.countExists(key) > 0;
     }
