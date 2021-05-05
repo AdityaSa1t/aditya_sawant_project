@@ -7,8 +7,13 @@ import org.redisson.config.Config;
 
 import java.util.List;
 
+/**
+ * This class acts as proxy to access Redis. It maintains a connection to Redis and provides methods to operate over
+ * Redis.
+ */
 public class RedisClientUtil {
 
+    /*A single instance of the connection is maintained*/
     private static RedissonClient redissonClient;
 
     static{
