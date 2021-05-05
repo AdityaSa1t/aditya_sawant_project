@@ -6,3 +6,7 @@ qB1:
   clazz: "com.cs540.rbatch.driver.TestObj"
   callback: "print"
   size: 2
+qC1:
+  clazz: "com.cs540.rbatch.driver.TestObj"
+  callback: "wrongCallback"
+  size: 2
