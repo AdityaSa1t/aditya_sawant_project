@@ -40,6 +40,7 @@ public class RBatchList {
             RedisClientUtil.addToList(this.name, obj);
             if(isBounded && RedisClientUtil.getListSize(name)==size)
                 makeCallback();
+            return;
         }
         throw new IllegalArgumentException("List "+name+" accepts only objects of type "+clazz.getName());
     }

@@ -1,4 +1,8 @@
-q10:
-  clazz: "TestObj"
+qA1:
+  clazz: "com.cs540.rbatch.driver.TestObj"
+  callback: "print"
+  size: 2
+qB1:
+  clazz: "com.cs540.rbatch.driver.TestObj"
   callback: "print"
   size: 2

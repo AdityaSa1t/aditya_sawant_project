@@ -1,3 +1,7 @@
+package com.cs540.rbatch.driver;
+
+import com.cs540.rbatch.driver.TestObj;
+
 import java.util.List;
 
 public class TestCallback{

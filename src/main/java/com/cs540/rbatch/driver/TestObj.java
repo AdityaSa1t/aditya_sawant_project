@@ -1,3 +1,5 @@
+package com.cs540.rbatch.driver;
+
 import java.io.Serializable;
 import java.util.List;
 
