@@ -82,7 +82,7 @@ For the protoype to work, [Redis](https://redis.io/download) needs to be install
 Once the installation is done, start the redis server from the command line using the following command:
 ```redis-start```
 
-Clone this repository using ```git clone https://github.com/AdityaSa1t/aditya_sawant_project.git``` or import this in your  IDE using the URL in the git clone command.
+Clone this repository using ```git clone https://github.com/AdityaSa1t/aditya_sawant_project.git``` or import this in your IDE using the URL in the git clone command.
 
 To build the project and run the tests, use the following command on the CLI:
 ```mvn clean compile install```
@@ -90,5 +90,11 @@ To build the project and run the tests, use the following command on the CLI:
 To build the project, run the test cases and also run the main function (simulation), use the following command on the CLI:
 ```mvn clean install exec:java -Dexec.mainClass=com.cs540.rbatch.driver.Main```
 
+<br>
+<br>
+<br>
 
+## Future Scope
+
+In the current prototype, we have constrained the batches based on the size i.e the number of objects collected in the list. We aim to explore batch lists that would be constrained by time as well, as it is a common use case for batch jobs to be executed in a schedule. Redisson also provides async and reactive interfaces which can help the framework address better performace for each batch job.  
 
