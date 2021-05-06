@@ -1,9 +1,9 @@
 # CS 540 - Spring 2021 - Course Project  
 #### Kewal Shah, Aditya Sawant
-#
+<br>
 ##### Description: In this project we present a protoype of a batch processing framework based on Redis. It allows the user to temporarily store its objects and then at a later time make the callback to the function that processes the batch of objects it receives.  
-#
-#
+<br>
+<br>
 ###### You can obtain this Git repo using the following command: 
 ```git clone https://github.com/AdityaSa1t/aditya_sawant_project.git```
 
@@ -11,9 +11,9 @@
 ## Overview
 In a way, batch processing tasks can also be viewed as scheduling tasks with special constraints such as time-windows and queue size which could be configured by the user. Some batching frameworks require a complex set of configurations to impplement batch jobs, so one of the goals of this framework was to present a convenient way to configure batch jobs. There's also the case that some batching frameworks read data only from a given data source such as files, database tables, etc. and don't have the ability to read data directly from objects. Hence, we have developed a soultion for this which requires these objects or their collections to be batched and their execution would be defined by a new or pre-existing function, which can also help developers use existing code. We present a framework that provides flexibility to configure the queues and provides enough freedom to read data and process the batched data without being constrained by the batch processing framework.
 
-#
-#
-#
+<br>
+<br>
+<br>
 
 ## Architecture 
 This framework is driven by two configuration files:
@@ -45,9 +45,9 @@ Then RBatchProcessor would get the corresponding list from its map. In case it i
 In RBatchList, when we add an object, it also checks if it's size or any other constraint has been reached. If this does happen, then it's corresponding callback will be made.
 
 Whenever a callback is made, a new worker thread is spawned to execute it and the queue in Redis would be cleared on successful execution. 
-#
-#
-#
+<br>
+<br>
+<br>
 
 
 ## Technologies used
@@ -67,9 +67,9 @@ We decided to use YAML to drive our configurations as it is easier to work with 
 As for the build tool, we tried to work with SBT. While it allowed us to incorporate all our dependecies, the resulting jar from the compile step had a few issues with Redisson, where it was not able to connect to the Redis server. That is why we decided to switch back to Maven where the resulting jar was able to work properly.
 
 
-#
-#
-#
+<br>
+<br>
+<br>
 
 
 ## Instructions 
