@@ -1,10 +1,10 @@
 # CS 540 - Spring 2021 - Course Project  
 #### Kewal Shah, Aditya Sawant
 <br>
-##### Description: In this project we present a protoype of a batch processing framework based on Redis. It allows the user to temporarily store its objects and then at a later time make the callback to the function that processes the batch of objects it receives.  
+#### Description: In this project we present a protoype of a batch processing framework based on Redis. It allows the user to temporarily store its objects and then at a later time make the callback to the function that processes the batch of objects it receives.  
 <br>
 <br>
-###### You can obtain this Git repo using the following command: 
+#### You can obtain this Git repo using the following command: 
 ```git clone https://github.com/AdityaSa1t/aditya_sawant_project.git```
 
 
