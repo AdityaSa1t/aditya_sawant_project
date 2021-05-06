@@ -3,6 +3,7 @@
 <br>
 Description: In this project we present a protoype of a batch processing framework based on Redis. It allows the user to temporarily store its objects and then at a later time make the callback to the function that processes the batch of objects it receives.  
 <br>
+[Previous project proposal](https://www.overleaf.com/read/rqcmzwtrymwd)
 <br>
 You can obtain this Git repo using the following command: 
 <br>
@@ -96,5 +97,7 @@ To build the project, run the test cases and also run the main function (simulat
 
 ## Future Scope
 
-In the current prototype, we have constrained the batches based on the size i.e the number of objects collected in the list. We aim to explore batch lists that would be constrained by time as well, as it is a common use case for batch jobs to be executed in a schedule. Redisson also provides async and reactive interfaces which can help the framework address better performace for each batch job.  
+In the current prototype, we have constrained the batches based on the size i.e the number of objects collected in the list. We aim to explore batch lists that would be constrained by time as well, as it is a common use case for batch jobs to be executed in a schedule. Redisson also provides async and reactive interfaces which can help the framework address better performace for each batch job. We would also like to look into making the framework annotation driven.
+
+
 
