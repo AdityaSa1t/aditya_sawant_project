@@ -3,7 +3,9 @@
 <br>
 Description: In this project we present a protoype of a batch processing framework based on Redis. It allows the user to temporarily store its objects and then at a later time make the callback to the function that processes the batch of objects it receives.  
 <br>
+<br>
 [Previous project proposal](https://www.overleaf.com/read/rqcmzwtrymwd)
+<br>
 <br>
 You can obtain this Git repo using the following command: 
 <br>
